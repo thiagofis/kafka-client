@@ -1,23 +1,23 @@
 package dev.messaging.producer;
 
 
-import dev.messaging.configuration.Configuration;
 import dev.messaging.message.Message;
-import org.apache.kafka.clients.consumer.ConsumerRecord;
-import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.Producer;
-import java.util.Properties;
+import org.apache.kafka.clients.producer.ProducerRecord;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class KafkaPublisher implements Publisher {
 
     private final Producer<String, String> producer;
 
-    public KafkaPublisher(Configuration configuration) {
-        var producerConfigs = configuration.getProperties();
-        this.producer = new KafkaProducer<String, String>(producerConfigs);
+    @Autowired
+    public KafkaPublisher(ProducerFactory producerFactory) {
+        this.producer = producerFactory.Create();
     }
 
+    @Override
     public void publish(Message message){
-
+        var record = new ProducerRecord<>(message.getTopic(), message.getKey(), message.getContent());
+        producer.send(record);
     }
 }

@@ -7,12 +7,19 @@ import static dev.messaging.util.JsonConverter.ToJson;
 
 public class KafkaMessage implements Message {
 
+    private final String topic;
     private final Object message;
     private final String key;
 
-    public KafkaMessage(Object message, String key) {
-        this.message = message;
+    public KafkaMessage(String topic, String key, Object message) {
+        this.topic = topic;
         this.key = key;
+        this.message = message;
+    }
+
+    @Override
+    public String getTopic() {
+        return topic;
     }
 
     @Override
