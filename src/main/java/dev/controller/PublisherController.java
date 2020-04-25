@@ -16,7 +16,7 @@ public class PublisherController {
         this.service = service;
     }
 
-    @PostMapping(path = "/", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path = "/")
     public void post(String topic, String key, String data) {
         service.publish(topic, key, data);
     }

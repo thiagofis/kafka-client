@@ -1,9 +1,9 @@
-package dev.dependency;
+package dev.dependency.bean;
 
+import dev.dependency.setting.ApplicationSettings;
 import dev.messaging.configuration.KafkaProducerConfiguration;
 import dev.messaging.producer.KafkaProducerFactory;
 import dev.messaging.producer.ProducerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
