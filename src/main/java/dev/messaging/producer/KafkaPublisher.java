@@ -5,7 +5,9 @@ import dev.messaging.message.Message;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class KafkaPublisher implements Publisher {
 
     private final Producer<String, String> producer;

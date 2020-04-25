@@ -2,10 +2,12 @@ package dev;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-public class ApplicationRunner implements CommandLineRunner {
+
+@SpringBootApplication
+public class ApplicationRunner {
 
     private static Logger log = LoggerFactory.getLogger(ApplicationRunner.class);
 
@@ -15,8 +17,5 @@ public class ApplicationRunner implements CommandLineRunner {
         log.info("APPLICATION FINISHED");
     }
 
-    @Override
-    public void run(String... args) throws Exception {
 
-    }
 }
