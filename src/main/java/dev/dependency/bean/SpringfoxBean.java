@@ -13,7 +13,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class SpringfoxBean {
 
     /**
-     * visit http://localhost:8080/swagger-ui.html your browser
+     * visit http://localhost:8080/swagger-ui.html in your browser
      * @return the Swagger 2 Springfox configuration
      */
 
