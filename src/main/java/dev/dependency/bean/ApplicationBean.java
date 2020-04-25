@@ -20,7 +20,7 @@ public class ApplicationBean {
 
     @Bean
     public ProducerFactory producerFactory(){
-        var configuration = new KafkaProducerConfiguration(settings.getKafka().getBootstrap().getServers());
+        var configuration = new KafkaProducerConfiguration(settings.getKafkaBootstrapServes());
         return new KafkaProducerFactory(configuration);
     }
 
