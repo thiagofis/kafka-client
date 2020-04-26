@@ -12,10 +12,9 @@ public class ApplicationRunner {
     private static Logger log = LoggerFactory.getLogger(ApplicationRunner.class);
 
     public static void main(String[] args) {
-        log.info("STARTING THE APPLICATION");
+        log.info("Starting the application");
         SpringApplication.run(ApplicationRunner.class, args);
-        log.info("APPLICATION FINISHED");
+        log.info("Application is running");
     }
-
 
 }
