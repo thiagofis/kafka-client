@@ -1,7 +1,7 @@
-package dev.service;
+package com.thiago.service;
 
-import dev.messaging.message.KafkaMessage;
-import dev.messaging.producer.Publisher;
+import com.thiago.messaging.message.KafkaMessage;
+import com.thiago.messaging.publisher.Publisher;
 import org.springframework.stereotype.Service;
 
 @Service

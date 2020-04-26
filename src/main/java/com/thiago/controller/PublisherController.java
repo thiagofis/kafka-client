@@ -1,7 +1,6 @@
-package dev.controller;
+package com.thiago.controller;
 
-import dev.service.PublisherService;
-import org.springframework.http.MediaType;
+import com.thiago.service.PublisherService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

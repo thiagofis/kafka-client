@@ -1,9 +1,9 @@
-package dev.dependency.bean;
+package com.thiago.dependency.bean;
 
-import dev.dependency.setting.ApplicationSettings;
-import dev.messaging.configuration.KafkaProducerConfiguration;
-import dev.messaging.producer.KafkaProducerFactory;
-import dev.messaging.producer.ProducerFactory;
+import com.thiago.messaging.publisher.ProducerFactory;
+import com.thiago.dependency.setting.ApplicationSettings;
+import com.thiago.messaging.configuration.KafkaProducerConfiguration;
+import com.thiago.messaging.publisher.KafkaProducerFactory;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

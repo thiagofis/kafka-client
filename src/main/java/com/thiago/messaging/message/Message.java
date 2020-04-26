@@ -1,4 +1,4 @@
-package dev.messaging.message;
+package com.thiago.messaging.message;
 
 public interface Message {
 

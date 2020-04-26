@@ -1,4 +1,4 @@
-package dev.dependency.setting;
+package com.thiago.dependency.setting;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

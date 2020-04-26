@@ -1,4 +1,4 @@
-package dev.dependency.bean;
+package com.thiago.dependency.bean;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package dev.messaging.exception;
+package com.thiago.messaging.exception;
 
 public class MessageContentException extends RuntimeException {
 

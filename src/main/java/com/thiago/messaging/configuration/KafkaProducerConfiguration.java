@@ -1,9 +1,7 @@
-package dev.messaging.configuration;
+package com.thiago.messaging.configuration;
 
 import java.util.List;
 import java.util.Properties;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 public class KafkaProducerConfiguration implements Configuration {
 

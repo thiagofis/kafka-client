@@ -1,9 +1,8 @@
-package dev.messaging.producer;
+package com.thiago.messaging.publisher;
 
-import dev.messaging.configuration.Configuration;
+import com.thiago.messaging.configuration.Configuration;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.Producer;
-import org.springframework.stereotype.Service;
 
 public class KafkaProducerFactory implements ProducerFactory {
 

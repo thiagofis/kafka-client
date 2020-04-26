@@ -1,6 +1,5 @@
-package dev.messaging.producer;
+package com.thiago.messaging.publisher;
 
-import dev.messaging.configuration.Configuration;
 import org.apache.kafka.clients.producer.Producer;
 
 public interface ProducerFactory {

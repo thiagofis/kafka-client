@@ -1,4 +1,4 @@
-package dev.messaging.configuration;
+package com.thiago.messaging.configuration;
 
 import java.util.Properties;
 

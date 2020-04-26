@@ -1,9 +1,8 @@
-package dev.messaging.message;
+package com.thiago.messaging.message;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import dev.messaging.exception.MessageContentException;
-
-import static dev.messaging.util.JsonConverter.ToJson;
+import com.thiago.messaging.exception.MessageContentException;
+import com.thiago.messaging.util.JsonConverter;
 
 public class KafkaMessage implements Message {
 
@@ -30,7 +29,7 @@ public class KafkaMessage implements Message {
     @Override
     public String getContent() throws MessageContentException {
         try {
-            return ToJson(message);
+            return JsonConverter.ToJson(message);
         } catch (JsonProcessingException e) {
             throw new MessageContentException(e);
         }
