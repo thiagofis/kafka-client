@@ -1,6 +1,12 @@
 settings:
   kafka:
-    bootstrap:
-      servers:
+    producer:
+      bootstrapServers:
+        - localhost:9092
+    consumer:
+      waitingTimeInSeconds: 3
+      topic: replicated_topic
+      groupId: kafka-java-app
+      bootstrapServers:
         - localhost:9092
 

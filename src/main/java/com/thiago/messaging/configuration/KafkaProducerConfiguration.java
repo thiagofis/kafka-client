@@ -1,5 +1,7 @@
 package com.thiago.messaging.configuration;
 
+import org.apache.kafka.common.serialization.StringSerializer;
+
 import java.util.List;
 import java.util.Properties;
 
@@ -9,7 +11,7 @@ public class KafkaProducerConfiguration implements Configuration {
     private final String bootstrapServersKey = "bootstrap.servers";
     private final String keySerializerKey = "key.serializer";
     private final String valueSerializerKey = "value.serializer";
-    private final String serializerValue = "org.apache.kafka.common.serialization.StringSerializer";
+    private final String serializerValue = StringSerializer.class.getName();
 
     public KafkaProducerConfiguration(List<String> bootstrapServers) {
         var bootstrapServersValue = String.join(",", bootstrapServers);
