@@ -19,6 +19,6 @@ public class KafkaConsumerFactory implements ConsumerFactory {
         var consumerConfigs = configuration.getProperties();
         var consumer = new KafkaConsumer<String, String>(consumerConfigs);
         consumer.subscribe(Collections.singletonList(topic));
-        return null;
+        return consumer;
     }
 }

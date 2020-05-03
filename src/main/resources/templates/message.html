@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages</title>
+    <link rel="stylesheet" type="text/css"  th:href="@{css/main.css}" media="screen" />
+    <script th:src="@{js/sockjs.js}"></script>
+    <script th:src="@{js/stomp.js}"></script>
+    <script type="text/javascript">
+        function connect() {
+            var socket = new SockJS('/message');
+            var stompClient = Stomp.over(socket);
+            stompClient.connect({}, function(frame) {
+                stompClient.subscribe('/topic/messages', function(messageOutput) {
+                    console.log("new msg " + messageOutput)
+                    addToTheTimeline(JSON.parse(messageOutput.body));
+                });
+            });
+        }
+
+        function addToTheTimeline(messageOutput) {
+            var timeline = document.getElementById('timeline');
+
+            var container = document.createElement('div');
+            container.className = 'container left';
+
+            var content = document.createElement('div');
+            container.className = 'content';
+
+            var h2 = document.createElement('h2');
+            h2.appendChild(document.createTextNode(messageOutput.key))
+
+            var p = document.createElement('p');
+            p.appendChild(document.createTextNode(messageOutput.content));
+
+            content.appendChild(h2);
+            content.appendChild(p);
+            container.appendChild(content);
+            timeline.appendChild(container);
+        }
+    </script>
+</head>
+<body onload="connect()">
+<div class="timeline" id="timeline">
+</div>
+
+</body>
+</html>
