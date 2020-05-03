@@ -7,6 +7,7 @@ settings:
       waitingTimeInSeconds: 3
       topic: replicated_topic
       groupId: kafka-java-app
+      autoOffsetReset: earliest #latest, earliest, none
       bootstrapServers:
         - localhost:9092
 

@@ -13,7 +13,6 @@
             var stompClient = Stomp.over(socket);
             stompClient.connect({}, function(frame) {
                 stompClient.subscribe('/topic/messages', function(messageOutput) {
-                    console.log("new msg " + messageOutput)
                     addToTheTimeline(JSON.parse(messageOutput.body));
                 });
             });
@@ -21,12 +20,15 @@
 
         function addToTheTimeline(messageOutput) {
             var timeline = document.getElementById('timeline');
+            var containerCollection = timeline.getElementsByClassName("container");
+
+            var directionClass = containerCollection.length % 2 === 0 ? "right" : "left";
 
             var container = document.createElement('div');
-            container.className = 'container left';
+            container.className = 'container ' + directionClass;
 
             var content = document.createElement('div');
-            container.className = 'content';
+            content.className = 'content';
 
             var h2 = document.createElement('h2');
             h2.appendChild(document.createTextNode(messageOutput.key))

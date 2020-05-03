@@ -6,6 +6,7 @@ public class ConsumerSettings {
     private String topic;
     private String groupId;
     private int waitingTimeInSeconds;
+    private String autoOffsetReset;
 
     public void setTopic(String topic) {
         this.topic = topic;
@@ -40,5 +41,13 @@ public class ConsumerSettings {
 
     public List<String> getBootstrapServers() {
         return bootstrapServers;
+    }
+
+    public void setAutoOffsetReset(String autoOffsetReset) {
+        this.autoOffsetReset = autoOffsetReset;
+    }
+
+    public String getAutoOffsetReset() {
+        return autoOffsetReset;
     }
 }

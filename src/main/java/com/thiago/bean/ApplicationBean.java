@@ -42,7 +42,7 @@ public class ApplicationBean {
 
     @Bean
     public ConsumerFactory consumerFactory() {
-        var configuration = new KafkaConsumerConfiguration(consumerSettings.getBootstrapServers(), consumerSettings.getGroupId());
+        var configuration = new KafkaConsumerConfiguration(consumerSettings.getBootstrapServers(), consumerSettings.getGroupId(), consumerSettings.getAutoOffsetReset());
         return new KafkaConsumerFactory(configuration);
     }
 }

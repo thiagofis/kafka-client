@@ -12,9 +12,10 @@ public class KafkaConsumerConfiguration implements Configuration {
     private final String bootstrapServersKey = "bootstrap.servers";
     private final String keyDeserializerKey = "key.deserializer";
     private final String valueDeserializerKey = "value.deserializer";
+    private final String autoOffsetResetKey = "auto.offset.reset";
     private final String deserializerValue = StringDeserializer.class.getName();
 
-    public KafkaConsumerConfiguration(List<String> bootstrapServers, String groupId) {
+    public KafkaConsumerConfiguration(List<String> bootstrapServers, String groupId, String autoOffsetResetValue) {
         var bootstrapServersValue = String.join(",", bootstrapServers);
 
         this.properties = new Properties();
@@ -22,6 +23,7 @@ public class KafkaConsumerConfiguration implements Configuration {
         this.properties.put(groupIdKey, groupId);
         this.properties.put(keyDeserializerKey, deserializerValue);
         this.properties.put(valueDeserializerKey, deserializerValue);
+        this.properties.put(autoOffsetResetKey, autoOffsetResetValue);
     }
 
     @Override
